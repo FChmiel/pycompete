@@ -1,19 +1,17 @@
-name: Lint
+name: Syntax linting
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: psf/black@stable
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          options: "--check --verbose"
-          src: "./pycompete"
+          python-version: 3.9
+      - name : Check syntax with black
+        run: |
+          pip install black
+          black --check .
