@@ -29,5 +29,5 @@ def sharpe_ratio(preds: np.array, targets: np.array, era: np.array) -> float:
         np.corrcoef(preds[era == moon], targets[era == moon])[0, 1] for moon in moons
     ]
     mean_correlation = np.mean(correlations)
-    std_correlation  = np.std(correlations)
+    std_correlation = np.std(correlations)
     return mean_correlation / std_correlation
