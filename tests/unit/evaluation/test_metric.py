@@ -1,5 +1,5 @@
 import pytest
-from pycompete.evaluation.metric import sharpe_ratio
+from pycompete.evaluation.metrics import sharpe_ratio
 import numpy as np
 
 

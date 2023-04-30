@@ -5,8 +5,6 @@ def sharpe_ratio(preds: np.array, targets: np.array, era: np.array) -> float:
     """
     Compute the Sharpe ratio for the predictions.
 
-    The sharpe ratio is defined
-
     Parameters
     ----------
     preds : np.array
