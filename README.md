@@ -1,6 +1,6 @@
 # pycompete
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)![GitHub](https://img.shields.io/github/license/FChmiel/pycompete)
 
 pycompete provides tools to support the training and evaluation of models for the [CrunchDAO competition](https://www.crunchdao.com/).
 
