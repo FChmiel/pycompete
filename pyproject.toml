@@ -10,7 +10,7 @@ authors = [
 description = "Tools to support the training and evalaution of models for the CRUNCHDAO project."
 readme = "README.md"
 requires-python = ">=3.7"
-url = "https://github.com/FChmiel/pycompete",
+url = "https://github.com/FChmiel/pycompete"
 keywords = ["crunchdao"]
 license = {text = "MIT license"}
 classifiers = [
