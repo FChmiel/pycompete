@@ -12,7 +12,6 @@ To interact with the API, you need set your API key as the `CRUNCH_API_KEY` envi
 
 `export CRUNCH_API_KEY = YOUR_API_KEY`
 
-
 ## Contributing
 
 Contributions are welcome.

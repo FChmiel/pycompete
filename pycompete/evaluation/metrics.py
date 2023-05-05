@@ -14,12 +14,11 @@ def sharpe_ratio(preds: np.array, targets: np.array, era: np.array) -> float:
         Targets used for evaluation.
 
     era : np.array
-        Era used for evaluation, this should be the 'moon' of each respective
-        instance.
+        Era used for evaluation, this should be the 'moon' of each instance.
 
     Returns
     -------
-    float
+    sharpe_ratio: float
         Sharpe ratio of the predictions.
     """
     moons = np.unique(era)
