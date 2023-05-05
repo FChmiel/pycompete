@@ -16,9 +16,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dynamic = ["version", "dependencies"]
-
-[project.scripts]
-my-script = "my_package.module:function"
+packages = ["pycompete"]
 
 
 [tool.setuptools.dynamic]
