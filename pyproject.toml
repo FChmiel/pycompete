@@ -1,8 +1,26 @@
-# pyproject.toml
 [build-system]
-requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
 
 [project]
-dynamic = ["version"]
+name = "pycompete"
+authors = [
+    {name = "Francis P Chmiel"},
+]
+description = "Tools to support the training and evalaution of models for the CRUNCHDAO project."
+readme = "README.md"
+requires-python = ">=3.7"
+url = "https://github.com/FChmiel/pycompete",
+keywords = ["crunchdao"]
+license = {text = "MIT license"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dynamic = ["version", "dependencies"]
 
-[tool.setuptools_scm]
+[project.scripts]
+my-script = "my_package.module:function"
+
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
