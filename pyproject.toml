@@ -16,8 +16,9 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 dynamic = ["version", "dependencies"]
-packages = ["pycompete"]
 
+[tool.setuptools]
+packages = ["pycompete"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
