@@ -14,4 +14,4 @@ To interact with the API, you need set your API key as the `CRUNCH_API_KEY` envi
 
 ## Contributing
 
-Contributions are welcome.
+Contributions are welcome. If you find a bug please raise an issue.
