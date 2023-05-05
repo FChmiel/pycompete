@@ -4,6 +4,10 @@
 
 pycompete provides tools to support the training and evaluation of models for the [CrunchDAO competition](https://www.crunchdao.com/).
 
+## Installing pycompete
+
+`pip install pycompete`
+
 ## Interacting with the CrunchDAO tournament
 
 We recommend using the open-source [CrunchDAO Python](https://github.com/uuazed/crunchdao/tree/main) API for pulling data and submitting predictions.
