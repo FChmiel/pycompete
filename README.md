@@ -18,4 +18,4 @@ To interact with the API, you need set your API key as the `CRUNCH_API_KEY` envi
 
 ## Contributing
 
-Contributions are welcome. If you find a bug please raise an issue.
+Contributions are welcome! Please feel free to raise a PR adding any functionality you think may be useful to other CrunchDAO competitors. If you find a bug please raise an issue and we will try and address.
