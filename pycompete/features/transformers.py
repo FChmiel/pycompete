@@ -1,5 +1,5 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn._typing import ArrayLike, MatrixLike
+from numpy.typing import ArrayLike
 from typing import Optional
 import numpy as np
 import pandas as pd
@@ -9,6 +9,10 @@ class RemoveCorrelated(BaseEstimator, TransformerMixin):
     def __init__(self, max_correlation: int = 0.95):
         """
         A transformer which removes highly correlated features.
+
+        This is a naive implementation which removes correlated features, it is
+        not stable for cases with groups of correlated features. This
+        implementation keeps the features with the lowest column index.
 
         Parameters:
         -----------
@@ -22,7 +26,7 @@ class RemoveCorrelated(BaseEstimator, TransformerMixin):
         """
         self.max_correlation = max_correlation
 
-    def fit(self, X: MatrixLike, y: Optional[ArrayLike] = None):
+    def fit(self, X: ArrayLike, y: Optional[ArrayLike] = None):
         """
         Fit the transformer according to the given training data.
 
@@ -42,14 +46,13 @@ class RemoveCorrelated(BaseEstimator, TransformerMixin):
         """
         if isinstance(X, pd.DataFrame):
             X = X.to_numpy()
-        # TO DO: check all entries are float
-        self.c_mat_ = np.corrcoef(X)
-        correlated_mask = (self.c_mat_ > self.max_correlation) & (self.c_mat_ != 1)
-        corr_cols = np.argwhere(correlated_mask)
-        self.cols_to_drop = np.unique((np.sort(corr_cols, axis=1)), axis=0)[:, 0]
+        self.c_mat_ = np.absolute(np.corrcoef(X, rowvar=False))
+        upper = np.triu(self.c_mat_, k=1)
+        corr_cols = np.argwhere(upper > self.max_correlation)
+        self.cols_to_drop = np.unique(corr_cols[:, 1])
         return self
 
-    def transform(self, X: MatrixLike, y: Optional[ArrayLike] = None):
+    def transform(self, X: ArrayLike, y: Optional[ArrayLike] = None):
         """
         Transform X by removing the columns which are highly correlated.
 
