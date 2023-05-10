@@ -14,7 +14,7 @@ Thanks for your interest in contributing to pycompete. We welcome any contributi
 We'll attempt to review your contribution as soon as possible.
 
 ## Linting
-We use [`black`](https://github.com/psf/black) for linting.
+We use [`black`](https://github.com/psf/black) for linting. We recommend running `make lint-fix` to run black.
 
 ## Testing 
 
