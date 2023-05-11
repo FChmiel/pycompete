@@ -23,3 +23,5 @@ def test_remove_correlated(X, X_expected, max_correlation):
     rc.fit(X)
     X_transformed = rc.transform(X)
     assert np.allclose(X_transformed, X_expected, rtol=1e-05)
+
+
